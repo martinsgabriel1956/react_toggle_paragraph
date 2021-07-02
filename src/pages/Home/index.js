@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { Container } from './styles';
 
 import Button from '../../components/UI/Button';
@@ -7,9 +7,10 @@ import DemoOutput from '../../components/Demo/DemoOutput';
 export function Home() {
   const [showParagraph, setShowParagraph] = useState(false);
 
-  function handleToggleParagraph() {
-    setShowParagraph(prevShowParagraph => !showParagraph);
-  }
+  
+  const handleToggleParagraph = useCallback(() => {
+    setShowParagraph(prevShowParagraph => !prevShowParagraph);
+  }, []);
 
   return (
     <Container>

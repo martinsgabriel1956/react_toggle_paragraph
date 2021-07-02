@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import { Container } from './styles';
 
-export function Button({children, ...props}) {
+function Button({children, ...props}) {
   return (
     <Container
       type={props.type || 'button'}
@@ -14,3 +14,5 @@ export function Button({children, ...props}) {
     </Container>
   );
 };
+
+export default memo(Button);
